@@ -56,31 +56,32 @@ client.on ("ready", () =>  {
 client.on("interactionCreate", interaction => {
     if (!interaction.isCommand()) return
 
-    if(interaction.commandName == "request-add-server") {
+    if (interaction.commandName == "request-add-server") {
         var embed = new Discord.MessageEmbed()
             .setTitle("Richiesta effettuata!")
-            .setDescription("***Grazie per aver fatto richiesta! Un amministratore ti scriverà in dm per dirti se sei stato accettato!***")
-        interaction.reply({ embeds: [embed], ephemeral: true})
-    }
-
-    let id = interaction.options.getString("id-server") 
-    let invito = interaction.options.getString("invito")
-    client.channels.cache.get("949983336456130630").send(`Richiesta d'aggiunzione eseguita da:${interaction.member.toString()}
-Id Server:${id.toString()}  
-Invito Server: ${invito.toString()}`)
-
-    if(interaction.commandName == "request-remove-server") {
-        var embed = new Discord.MessageEmbed()
-            .setTitle("Richiesta effettuata!")
-            .setDescription("***Grazie per aver fatto la richiesta! Un amministratore ti confermerà in dm l'uscita dall'unione usi!***")
+            .setDescription("Grazie per aver fatto richiesta! Un amministratore ti scriverà in dm per dirti se sei stato accettato!")
         interaction.reply({ embeds: [embed], ephemeral: true })
+
+
+        let id = interaction.options.getString("id-server")
+        let invito = interaction.options.getString("invito")
+        client.channels.cache.get("949983336456130630").send(`Richiesta d'aggiunzione eseguita da: ${interaction.member.toString()}
+Id Server: ${id}  
+Invito Server: ${invito}`)
     }
 
-    let Id = interaction.options.getString("id-server")
-    let Invito = interaction.options.getString("invito")
-    let motivo = interaction.options.getString("motivo")
-    client.channels.cache.get("949983336456130630").send(`Richiesta d'uscita eseguita da:${interaction.member.toString()}
-Id Server:${id.toString()}
-Invito Server: ${invito.toString()}
+    if (interaction.commandName == "request-remove-server") {
+        var embed = new Discord.MessageEmbed()
+            .setTitle("Richiesta effettuata!")
+            .setDescription("Grazie per aver fatto la richiesta! Un amministratore ti confermerà in dm l'uscita dall'unione usi!")
+        interaction.reply({ embeds: [embed], ephemeral: true })
+
+        let id = interaction.options.getString("id-server")
+        let invito = interaction.options.getString("invito")
+        let motivo = interaction.options.getString("motivo")
+        client.channels.cache.get("949983336456130630").send(`Richiesta d'uscita eseguita da: ${interaction.member.toString()}
+Id Server:${id}
+Invito Server: ${invito}
 Motivo: ${motivo} `)
-}) 
+    }
+})
