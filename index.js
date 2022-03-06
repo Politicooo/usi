@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 const client = new Discord.Client(
-    { intents: ["GUILDS", "GUILD_MEMBERS", "GUILD_MESSAGES"] })
+    { intents: ["GUILDS", "GUILD_MEMBERS", "GUILD_MESSAGES", "GUILD_INTEGRATIONS"] })
 
 client.login(process.env.token)
 
