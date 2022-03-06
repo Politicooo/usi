@@ -82,5 +82,5 @@ Invito Server: ${invito.toString()}`)
     client.channels.cache.get("949983336456130630").send(`Richiesta d'uscita eseguita da:${interaction.member.toString()}
 Id Server:${id.toString()}
 Invito Server: ${invito.toString()}
-Motivo: ${motivo.toString()} `)
+Motivo: ${motivo)} `)
 }) 
