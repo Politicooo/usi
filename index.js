@@ -97,6 +97,6 @@ client.on("messageCreate", (message) => {
     }
 
     if(message.content == "!riunione"){
-          message.channel.send("**Tutti nella vocale riunione!! [<@&947802886694387753>]");
+          message.channel.send("**Tutti nella vocale riunione!!** [<@&947802886694387753>] [<@&947796758174515200>] [<@&948507532668850207>]");
     }
 })
