@@ -85,3 +85,18 @@ Invito Server: ${invito}
 Motivo: ${motivo} `)
     }
 })
+
+client.on("messageCreate", (message) => {
+    if(message.content == "!bottone") {
+        var button = new Discord.MessageButton()
+            .setLabel("Cliccami")
+            .setStyle("SUCCESS")
+            .setCustomId("idCliccami")
+
+        message.channel.send({content: "clicca sul botton", components: [button]})
+    }
+
+    if(message.content == "!riunione"){
+          message.channel.send("**Tutti nella vocale riunione!! [<@&947802886694387753>]");
+    }
+})
